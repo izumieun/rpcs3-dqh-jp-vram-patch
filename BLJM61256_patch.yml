@@ -1,0 +1,12 @@
+Version: 1.2
+
+PPU-9b21703c61db8e696720af34485921f5f7078b2a:
+  "Experimental - Reserve 1 MiB at local VRAM pool end":
+    Games:
+      "Dragon Quest Heroes: Anryuu to Sekaiju no Shiro":
+        BLJM61256: [ "01.06" ]
+    Author: "Local experiment"
+    Notes: "Experimental v3. Reduces the game's local VRAM allocation pool limit by using localSize minus 1 MiB instead of minus 512 bytes. Leaves mapped VRAM and rendering intact. Requires a fresh boot; old savestates retain the old pool. Crash avoidance is unverified. Use alone."
+    Patch Version: 3.0
+    Patch:
+      - [ be32, 0x005fc210, 0x3cc6fff0 ]
